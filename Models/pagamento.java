@@ -162,7 +162,7 @@ public class pagamento {
 
                     if (validador) {
                         //Ajeitado 
-                        validadorResposta = String.format("Pagamento de R$ %,.2f realidzado com sucesso em %d vezes, dando o total de R$ %,.2f",
+                        validadorResposta = String.format("Pagamento de R$ %,.2f realizado com sucesso em %d vezes, dando o total de R$ %,.2f",
                         valor, numParcelas, valorComJuros);
                         JOptionPane.showMessageDialog(null, validadorResposta);
                     }
