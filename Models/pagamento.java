@@ -9,17 +9,8 @@ import java.util.TimerTask;
 
 public class pagamento {
 
-    /*public String EscolherFormaDePagamento (){
+    private String validadorResposta = "";
 
-        String[] opcoes = {"Dinheiro", "Pix", "Cartão"};
-        String formaPagamento = (String) JOptionPane.showInputDialog(null, "Selecione a forma de pagamento:",
-                "Forma de Pagamento", JOptionPane.QUESTION_MESSAGE, null, opcoes, opcoes[0]);
-
-        return formaPagamento;
-    }*/
-
-
-    String validadorResposta = "";
 
     // Método para pagamento via PIX
     public void pagarComPix(double valor) {
