@@ -4,6 +4,8 @@ package Models;
 import java.util.Random;//import para criar o codio pix
 
 import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
+
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -35,27 +37,28 @@ public class pagamento {
         // Exibe a chave PIX gerada
         JOptionPane.showMessageDialog(null, "Sua chave PIX é: " + serie.toString());
     
-        System.out.println("AA");
     
-        // Configura o cronômetro para 15 segundos
+        // Configura o cronômetro para 2 milissegundos
         Timer timer = new Timer();
         TimerTask tarefa = new TimerTask() {
             @Override
             public void run() {
-                try {
-                    JOptionPane.showMessageDialog(null, "Pagamento via PIX efetuado com sucesso.");
-                    System.out.println("BB");
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-                // Exibe a mensagem após 15 segundos
+                System.out.println("Run method started.");
+                SwingUtilities.invokeLater(new Runnable() {
+                    @Override
+                    public void run() {
+                        JOptionPane.showMessageDialog(null, "Pagamento via PIX efetuado com sucesso.");
+                    }
+                });
                 timer.cancel(); // Cancela o cronômetro
             }
         };
-    
-        // Agenda a tarefa para ser executada após 15 segundos (15000 milissegundos)
-        timer.schedule(tarefa, 15000);
-        System.out.println("CC");
+
+        // Agenda a tarefa para ser executada após 2 milissegundos
+        timer.schedule(tarefa, 10);
+
+        // Verificação adicional para garantir que o agendamento está correto
+        System.out.println("Tarefa agendada para ser executada em 2 milissegundos.");
     }
 
 
